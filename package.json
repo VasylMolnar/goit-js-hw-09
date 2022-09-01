@@ -1,0 +1,21 @@
+{
+  "name": "goit-js-hw-09",
+  "version": "1.0.0",
+  "description": "**Read in other languages: [Русский](README.md), [Polski](README.pl.md).**",
+  "homepage": "https://vasylmolnar.github.io/goit-js-hw-09/",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/*.html",
+    "build": "parcel build src/*.html --public-url /goit-js-hw-09/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VasylMolnar/goit-js-hw-09.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VasylMolnar/goit-js-hw-09/issues"
+  }
+}
