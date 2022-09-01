@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
+    "gh-pages": "^4.0.0",
     "parcel": "^2.6.0",
     "parcel-plugin-handlebars-precompile": "^1.0.2",
     "parcel-plugin-nuke-dist": "^1.0.1",
@@ -30,7 +31,6 @@
   "dependencies": {
     "dist": "^0.1.2",
     "flatpickr": "^4.6.9",
-    "gh-pages": "^4.0.0",
     "modern-normalize": "^1.1.0",
     "notiflix": "^3.2.2"
   },
