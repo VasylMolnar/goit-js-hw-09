@@ -1,0 +1,43 @@
+body {
+    text-align: center;
+}
+
+input {
+    width: 600px;
+    height: 50px;
+    padding: 0 10px 0 10px;
+
+    background-color: ffffff;
+    border: 1px solid #cccccc;
+}
+
+button {
+    width: 200px;
+    height: 50px;
+    margin-bottom: 50px;
+    background-color: rgb(209, 213, 244);
+    border: none;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #e4e4e4;
+}
+
+
+.timer {
+    display: flex;
+    justify-content: center;
+}
+
+
+.field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100px;
+    padding: 10px 0 10px 0;
+    margin-right: 20px;
+    border: 1px solid #cccccc;
+}
