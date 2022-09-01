@@ -28,6 +28,7 @@ const options = {
     } else {
       refs.startBtn.disabled = false;
       selectedTime = selectedDates[0];
+      //test selectedTime = new Date('Fri Sep 01 2022 17:43:00 GMT+0300');
     }
   },
 };
@@ -72,6 +73,7 @@ refs.startBtn.disabled = true;
 flatpickr(refs.inputDate, options);
 
 refs.startBtn.addEventListener('click', () => {
+  console.log(selectedTime);
   timerID = setInterval(() => {
     const deltaTime = selectedTime - Date.now();
     const componentsTimer = convertMs(deltaTime);
