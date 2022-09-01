@@ -23,9 +23,9 @@ refs.form.addEventListener('submit', event => {
         });
         console.log(`❌ Rejected promise ${position} in ${delay}ms`);
       });
-  }
 
-  delay += step;
+    delay += step;
+  }
 });
 
 function createPromise(position, delay) {

@@ -1,5 +1,5 @@
 import flatpickr from 'flatpickr';
-import Notiflix from 'notiflix';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import 'flatpickr/dist/flatpickr.min.css';
 
 let selectedTime = null;
@@ -21,7 +21,8 @@ const options = {
   onClose(selectedDates) {
     //console.log(selectedDates[0]);
     if (selectedDates[0] < Date.now()) {
-      window.alert('Please choose a date in the future');
+      //window.alert('Please choose a date in the future');
+      Notify.failure('Please choose a date in the future');
       selectedDates[0] = new Date();
       refs.startBtn.disabled = true;
     } else {
@@ -39,13 +40,15 @@ function convertMs(ms) {
   const day = hour * 24;
 
   // Remaining days
-  const days = Math.floor(ms / day);
+  const days = addLeadingZero(Math.floor(ms / day));
   // Remaining hours
-  const hours = Math.floor((ms % day) / hour);
+  const hours = addLeadingZero(Math.floor((ms % day) / hour));
   // Remaining minutes
-  const minutes = Math.floor(((ms % day) % hour) / minute);
+  const minutes = addLeadingZero(Math.floor(((ms % day) % hour) / minute));
   // Remaining seconds
-  const seconds = Math.floor((((ms % day) % hour) % minute) / second);
+  const seconds = addLeadingZero(
+    Math.floor((((ms % day) % hour) % minute) / second)
+  );
 
   return { days, hours, minutes, seconds };
 }
@@ -70,9 +73,10 @@ flatpickr(refs.inputDate, options);
 
 refs.startBtn.addEventListener('click', () => {
   timerID = setInterval(() => {
-    const componentsTimer = convertMs(selectedTime - Date.now());
+    const deltaTime = selectedTime - Date.now();
+    const componentsTimer = convertMs(deltaTime);
     updateComponentsTimer(componentsTimer);
-    if (componentsTimer.hours <= 0) {
+    if (deltaTime <= 0) {
       stopTimer();
     }
     //console.log(componentsTimer.hours);
