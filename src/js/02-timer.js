@@ -73,7 +73,7 @@ refs.startBtn.disabled = true;
 flatpickr(refs.inputDate, options);
 
 refs.startBtn.addEventListener('click', () => {
-  console.log(selectedTime);
+  //console.log(selectedTime);
   timerID = setInterval(() => {
     const deltaTime = selectedTime - Date.now();
     const componentsTimer = convertMs(deltaTime);
